@@ -49,13 +49,13 @@ const styles = StyleSheet.create({
     // shadowRadius: 10,
   },
   fullHeight: {
-    height: "60%",
+    maxHeight: "70%",
     overflow: "scroll",
     marginVertical: 20,
     paddingVertical: 16,
   },
   todoListScroll: {
-    height: 150,
+    maxHeight: 150,
     overflow: "scroll",
     marginVertical: 20,
     paddingVertical: 16,
