@@ -4,7 +4,12 @@ import { View, Text, StyleSheet, TextInput, Button ,Platform} from "react-native
 function AddTodo({ setList }) {
   const [text, onChangeText] = useState(null);
   const [isFocus, setIsFocus] = useState(false);
-
+function submit(){
+  if(text?.trim().length>0){
+    onChangeText("")
+    setList(perv=>[{title:text.trim(),id: new Date().toString().split(" ").concat()},...perv]);
+  }
+}
   return (
     <View style={[styles.todoCard]}>
       <TextInput
@@ -14,18 +19,14 @@ function AddTodo({ setList }) {
         onBlur={function(){setIsFocus(false)}}
         onChange={onChangeText}
         onChangeText={onChangeText}
+        onSubmitEditing={submit}
         placeholder="add text"
         placeholderTextColor="#fff6"
         keyboardAppearance="dark"
       />
       <Button
         title="Add"
-        onPress={() => {
-          if(text?.trim().length>0){
-            onChangeText("")
-            setList(perv=>[{title:text.trim(),id: new Date().toString().split(" ").concat()},...perv]);
-          }
-        }}
+        onPress={submit}
         color="#FE938C"
         style={styles.todoButton}
       />
