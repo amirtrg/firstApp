@@ -18,6 +18,7 @@ function submit(){
         onFocus={function(){setIsFocus(true)}}
         onBlur={function(){setIsFocus(false)}}
         onChange={onChangeText}
+        returnKeyType="done"
         onChangeText={onChangeText}
         onSubmitEditing={submit}
         placeholder="add text"
